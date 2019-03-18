@@ -24,6 +24,7 @@ defmodule TaskTrackerSpaWeb.Router do
 
     resources "/users", UserController, except: [:new, :edit]
     resources "/tasks", TaskController, except: [:new, :edit]
+    resources "/times", TimeController, except: [:new, :edit]
     post "/auth", AuthController, :authenticate
   end
 

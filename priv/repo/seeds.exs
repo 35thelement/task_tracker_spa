@@ -15,7 +15,10 @@ hash = Argon2.hash_pwd_salt("passwd")
 alias TaskTrackerSpa.Repo
 alias TaskTrackerSpa.Users.User
 alias TaskTrackerSpa.Tasks.Task
+alias TaskTrackerSpa.Times.Time
 
-Repo.insert!(%User{email: "m.sakurai@nintendo.net", name: "Masahiro Sakurai", password_hash: hash, admin: true})
-user = Repo.insert!(%User{email: "buyskyrimpls@bethesda.org", name: "Todd Howard", password_hash: hash, admin: true})
-task = Repo.insert!(%Task{name: "Create Skyrim for Toasters", description: "Make a version of Skyrim that is playable on a toaster oven.", finished: false, user: user})
+masahiro = Repo.insert!(%User{email: "m.sakurai@nintendo.net", name: "Masahiro Sakurai", password_hash: hash, admin: true})
+todd = Repo.insert!(%User{email: "buyskyrimpls@bethesda.org", name: "Todd Howard", password_hash: hash, admin: true})
+task = Repo.insert!(%Task{name: "Create Skyrim for Toasters", description: "Make a version of Skyrim that is playable on a toaster oven.", finished: false, user: todd})
+Repo.insert!(%Time{user: todd, task: task, minutes: 30})
+Repo.insert!(%Time{user: masahiro, task: task, minutes: 15})
