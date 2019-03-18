@@ -7,7 +7,7 @@ defmodule TaskTrackerSpa.Tasks.Task do
     field :finished, :boolean, default: false
     field :name, :string
     belongs_to :user, TaskTrackerSpa.Users.User
-    has_many :tasks, TaskTrackerSpa.Tasks.Task
+    has_many :times, TaskTrackerSpa.Times.Time
 
     timestamps()
   end
