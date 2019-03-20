@@ -15,5 +15,13 @@ defmodule TaskTrackerSpa.Times.Time do
     time
     |> cast(attrs, [:minutes, :user_id, :task_id])
     |> validate_required([:minutes, :user_id, :task_id])
+    |> validate_number(:minutes, greater_than: -1)
+    |> validate_change(:minutes, fn :minutes, minutes ->
+      if rem(minutes, 15) > 0 do
+        [minutes: "must be a multiple of 15"]
+      else
+        []
+      end
+    end)
   end
 end
