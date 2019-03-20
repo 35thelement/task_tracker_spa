@@ -20,5 +20,6 @@ alias TaskTrackerSpa.Times.Time
 masahiro = Repo.insert!(%User{email: "m.sakurai@nintendo.net", name: "Masahiro Sakurai", password_hash: hash, admin: true})
 todd = Repo.insert!(%User{email: "buyskyrimpls@bethesda.org", name: "Todd Howard", password_hash: hash, admin: true})
 task = Repo.insert!(%Task{name: "Create Skyrim for Toasters", description: "Make a version of Skyrim that is playable on a toaster oven.", finished: false, user: todd})
+task2 = Repo.insert!(%Task{name: "Make more DLC for Super Smash Bros.", description: "Put Banjo-Kazooie, Geno, and Goku in Smash.", finished: false, user: masahiro})
 Repo.insert!(%Time{user: todd, task: task, minutes: 30})
 Repo.insert!(%Time{user: masahiro, task: task, minutes: 15})
