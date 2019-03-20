@@ -5,6 +5,8 @@ function tasks(state = [], action) {
   switch (action.type) {
     case 'TASK_LIST':
     return action.data;
+    case  'TASK_DELETE':
+    return _.filter(state, (task) => task.id != action.task_id)
     default:
     return state;
   }

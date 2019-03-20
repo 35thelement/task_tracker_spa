@@ -11,6 +11,7 @@ export default connect((state) => {return {times: state.times};})((props) => {
   <td>{time.task}</td>
   <td>{time.user}</td>
   <td>{time.minutes}</td>
+  <td><button className="btn btn-danger m-1" onClick={() => api.delete_time(time.id)}>X</button></td>
   </tr>);
 
   return (
@@ -18,7 +19,7 @@ export default connect((state) => {return {times: state.times};})((props) => {
     <h2>Times</h2>
     <table className="table table-striped">
     <thead>
-    <tr><th>Task Name</th><th>User</th><th>Minutes Spent</th></tr>
+    <tr><th>Task Name</th><th>User</th><th>Minutes Spent</th><th></th></tr>
     </thead>
     <tbody>
     {rows}

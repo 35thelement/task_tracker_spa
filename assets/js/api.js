@@ -72,6 +72,21 @@ class OurServer {
     });
   }
 
+  delete_task(id) {
+    $.ajax("/api/tasks/" + id, {
+      method: "delete",
+      dataType: "json",
+      contentType: "application/json; charset=UTF-8",
+      data: "",
+      success: (resp) => {
+        tracker.dispatch({
+          type: 'TASK_DELETE',
+          task_id: id
+        });
+      }
+    });
+  }
+
   delete_time(id) {
     $.ajax("/api/times/" + id, {
       method: "delete",
