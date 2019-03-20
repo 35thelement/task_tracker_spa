@@ -4,9 +4,10 @@ defmodule TaskTrackerSpa.Users do
   """
 
   import Ecto.Query, warn: false
+  import Comeonin
   alias TaskTrackerSpa.Repo
-
   alias TaskTrackerSpa.Users.User
+  alias Comeonin
 
   @doc """
   Returns the list of users.
@@ -43,8 +44,8 @@ defmodule TaskTrackerSpa.Users do
   Returns {:ok, user} if successful, or {:error, msg} on failure.
   """
   def authenticate_user(email, password) do
-    Repo.get_by(User, email)
-    |> Argon2.check_pass(password)
+    Repo.one(from u in User, where: u.email == ^email)
+    |> Comeonin.Argon2.check_pass(password)
   end
 
   @doc """

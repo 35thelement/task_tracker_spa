@@ -12,6 +12,8 @@ defmodule TaskTrackerSpaWeb.TimeView do
 
   def render("time.json", %{time: time}) do
     %{id: time.id,
-      minutes: time.minutes}
+      minutes: time.minutes,
+      user: time.user_id,
+      task: time.task_id}
   end
 end

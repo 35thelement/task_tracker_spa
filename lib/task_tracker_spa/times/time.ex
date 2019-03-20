@@ -13,7 +13,7 @@ defmodule TaskTrackerSpa.Times.Time do
   @doc false
   def changeset(time, attrs) do
     time
-    |> cast(attrs, [:minutes, :user, :task])
-    |> validate_required([:minutes, :user, :task])
+    |> cast(attrs, [:minutes, :user_id, :task_id])
+    |> validate_required([:minutes, :user_id, :task_id])
   end
 end

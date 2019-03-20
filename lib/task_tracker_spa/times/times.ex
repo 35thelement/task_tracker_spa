@@ -18,7 +18,7 @@ defmodule TaskTrackerSpa.Times do
 
   """
   def list_times do
-    Repo.all(Time)
+    Repo.all(Time) |> Repo.preload(:user) |> Repo.preload(:task)
   end
 
   @doc """
@@ -35,7 +35,7 @@ defmodule TaskTrackerSpa.Times do
       ** (Ecto.NoResultsError)
 
   """
-  def get_time!(id), do: Repo.get!(Time, id)
+  def get_time!(id), do: Repo.get!(Time, id) |> Repo.preload(:user) |> Repo.preload(:task)
 
   @doc """
   Creates a time.

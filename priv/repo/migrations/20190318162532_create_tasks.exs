@@ -12,5 +12,6 @@ defmodule TaskTrackerSpa.Repo.Migrations.CreateTasks do
     end
 
     create index(:tasks, [:user_id])
+    create index(:tasks, [:name], unique: true)
   end
 end
