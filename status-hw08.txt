@@ -26,7 +26,7 @@ The app functionality is complete.
 
 6. Is your app properly deployed? If not, what went wrong?
 
-The app is
+The app is fully deployed.
 
 
 
