@@ -82,6 +82,16 @@ class OurServer {
     });
   }
 
+  make_user() {
+    let state = tracker.getState();
+    let data  = state.registration_form;
+    console.log("making new user", state);
+    this.make_post("/api/users", {user: data},
+    (resp) => {
+      this.get_users();
+    });
+  }
+
   do_put(path, data, callback) {
     $.ajax(path, {
       method: "put",
