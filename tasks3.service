@@ -9,8 +9,8 @@ Restart=on-failure
 Environment=MIX_ENV=prod "PORT=4795"
 Environment=LANG=en_US.UTF-8
 
-WorkingDirectory=/home/tasks3/task_tracker
-ExecStart=/home/tasks3/task_tracker/start.sh
+WorkingDirectory=/home/tasks3/task_tracker_spa
+ExecStart=/home/tasks3/task_tracker_spa/start.sh
 
 [Install]
 WantedBy=multi-user.target
