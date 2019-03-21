@@ -72,6 +72,34 @@ class OurServer {
     });
   }
 
+  make_task() {
+    let state = tracker.getState();
+    let data = state.make_task_form;
+    console.log("making new task", state);
+    this.make_post("/api/tasks", {task: data},
+    (resp) => {
+      this.get_tasks();
+    });
+  }
+
+  do_put(path, data, callback) {
+    $.ajax(path, {
+      method: "put",
+      dataType: "json",
+      contentType: "application/json; charset=UTF-8",
+      data: JSON.stringify(data),
+      success: callback
+    });
+  }
+
+  put_task(task_id, new_task_data) {
+    console.log("updating task");
+    this.do_put("/api/tasks/" + task_id, {task: new_task_data},
+    (resp) => {
+      this.get_tasks();
+    });
+  }
+
   delete_task(id) {
     $.ajax("/api/tasks/" + id, {
       method: "delete",

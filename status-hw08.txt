@@ -1,0 +1,36 @@
+
+Web Dev Fall 2018 HW08 Status
+
+Answer the following questions:
+
+
+1. What's your name?
+
+Ben Romine
+
+2. What's the URL of the github repo with your work for this HW?
+
+https://github.com/35thelement/task_tracker_spa
+
+3. What's the version number of your github release?
+
+
+
+4. What's the URL that you deployed to?
+
+https://tasks3.element35.org
+
+5. Is your app functionality complete? If not, what's missing?
+
+
+
+6. Is your app properly deployed? If not, what went wrong?
+
+
+
+
+
+And here's a list of tasks for grading comments. Just leave this here:
+ - Development
+ - Deployment
+ - Submission

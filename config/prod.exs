@@ -10,8 +10,11 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :task_tracker_spa, TaskTrackerSpaWeb.Endpoint,
+  server: true,
+  root: ".",
+  version: Application.spec(:phoenix_distiller, :vsn),
   http: [:inet6, port: System.get_env("PORT") || 4000],
-  url: [host: "example.com", port: 80],
+  url: [host: "tasks3.element35.org", port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 # Do not print debug messages in production

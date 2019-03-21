@@ -52,6 +52,39 @@ function login_form(state = login_form0, action) {
   }
 }
 
+let registration_form0 = {email: "", name: "", password: ""};
+function registration_form(state = registration_form0, action) {
+  switch (action.type) {
+    case 'UPDATE_REGISTRATION_FORM':
+    return Object.assign({}, state, action.data);
+    break;
+    default:
+    return state;
+  }
+}
+
+let task_form0 = {name: "", description: "", finished: false, user_id: 0};
+function make_task_form(state = task_form0, action) {
+  switch (action.type) {
+    case 'UPDATE_ADD_TASK_FORM':
+    return Object.assign({}, state, action.data);
+    break;
+    default:
+    return state;
+  }
+}
+
+function task_form_update(state = new Map(), action) {
+  switch (action.type) {
+    case 'UPDATE_PUT_TASK_FORM':
+    let state1 = new Map(state);
+    state1.set(action.task_id)
+    break;
+    default:
+    return state;
+  }
+}
+
 function make_time_forms(state = new Map(), action) {
   switch (action.type) {
     case 'UPDATE_ADD_TIME_FORM':
@@ -66,7 +99,8 @@ function make_time_forms(state = new Map(), action) {
 function root_reducer(state0, action) {
   console.log("reducer", state0, action);
 
-  let reducer = combineReducers({tasks, users, times, session, login_form, make_time_forms});
+  let reducer = combineReducers({tasks, users, times, session,
+    login_form, make_time_forms, make_task_form, registration_form, task_form_update});
   let state1 = reducer(state0, action);
 
   console.log("reducer1", state1);
