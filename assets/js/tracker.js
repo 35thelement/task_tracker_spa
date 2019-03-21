@@ -52,7 +52,7 @@ function login_form(state = login_form0, action) {
   }
 }
 
-let registration_form0 = {email: "", name: "", password: "", admin: false};
+let registration_form0 = {email: "", name: "", password_hash: "", admin: false};
 function registration_form(state = registration_form0, action) {
   switch (action.type) {
     case 'UPDATE_REGISTRATION_FORM':
