@@ -37,7 +37,7 @@ let Header = connect(({login_form}) => {return {login_form};})((props) => {
     <div className="col-4">
       <p>
         <Link to={"/"}>Tasks</Link> &nbsp; | &nbsp;
-        <Link to={"/users"}>Users</Link>
+        <Link to={"/users"}>Users and Registration</Link>
       </p>
     </div>
     <div className="col-4">

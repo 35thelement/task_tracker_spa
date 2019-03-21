@@ -14,7 +14,7 @@ https://github.com/35thelement/task_tracker_spa
 
 3. What's the version number of your github release?
 
-
+1.0
 
 4. What's the URL that you deployed to?
 
@@ -22,11 +22,11 @@ https://tasks3.element35.org
 
 5. Is your app functionality complete? If not, what's missing?
 
-
+The app functionality is complete.
 
 6. Is your app properly deployed? If not, what went wrong?
 
-
+The app is
 
 
 
