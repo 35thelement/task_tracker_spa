@@ -48,30 +48,22 @@ function Task(props) {
     };
     dispatch(action);
   }
-  function update_task(ev) {
-    let target = $(ev.target);
-    let data = {};
-    data[target.attr('name')] = target.val();
-    let action = {
-      type: 'UPDATE_PUT_TASK_FORM',
-      task_id: task.id,
-      data: data
-    };
-    dispatch(action);
-  }
   return (
     <tr>
     <td>{task.id}</td>
     <td>{task.name}</td>
     <td>{task.description}</td>
-    <td>
-    <input type="number" name="user_id" className="form-control m-1" value={task.user_id} onChange={update_task} />
-    <button className="btn btn-primary m-1"
+    <td>{task.user_id}</td>
+    <td>{task.finished ? "Y" : "N"}
+    <button className="btn btn-success m-1"
     onClick={() => api.put_task(task.id,
-      {name: task.name, description: task.description, finished: task.finished, user_id: task.user_id}
-    )}>Assign</button>
+      {name: task.name, description: task.description, finished: true, user_id: task.user_id}
+    )}>Finish</button>
+    <button className="btn btn-danger m-1"
+    onClick={() => api.put_task(task.id,
+      {name: task.name, description: task.description, finished: false, user_id: task.user_id}
+    )}>Unfinish</button>
     </td>
-    <td><input type="checkbox" name="finished" className="form-control m-1" value={task.finished} onChange={update_task}/></td>
     <td>
     <div className="form">
     <div className="form-group">

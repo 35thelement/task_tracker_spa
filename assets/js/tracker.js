@@ -74,17 +74,6 @@ function make_task_form(state = task_form0, action) {
   }
 }
 
-function task_form_update(state = new Map(), action) {
-  switch (action.type) {
-    case 'UPDATE_PUT_TASK_FORM':
-    let state1 = new Map(state);
-    state1.set(action.task_id)
-    break;
-    default:
-    return state;
-  }
-}
-
 function make_time_forms(state = new Map(), action) {
   switch (action.type) {
     case 'UPDATE_ADD_TIME_FORM':
@@ -100,7 +89,7 @@ function root_reducer(state0, action) {
   console.log("reducer", state0, action);
 
   let reducer = combineReducers({tasks, users, times, session,
-    login_form, make_time_forms, make_task_form, registration_form, task_form_update});
+    login_form, make_time_forms, make_task_form, registration_form});
   let state1 = reducer(state0, action);
 
   console.log("reducer1", state1);

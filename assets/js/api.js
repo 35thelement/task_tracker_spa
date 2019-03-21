@@ -16,7 +16,9 @@ class OurServer {
     (resp) => {
       tracker.dispatch({
         type: 'TASK_LIST',
-        data: resp.data
+        data: resp.data.sort(function(a, b) {
+          return parseFloat(a.id) - parseFloat(b.id);
+        })
       });
     });
   }
